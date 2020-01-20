@@ -4,6 +4,7 @@ module.exports = {
     description: `Single section landing page. Cool svgs. Modern colors. Let's rock!`,
     author: `Kuba Chrapek @kuba.chrapek`,
   },
+  pathPrefix: "/huddle-landing-page",
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
