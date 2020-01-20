@@ -20,11 +20,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Huddle Landing Page`,
+        short_name: `Huddle`,
         start_url: `/`,
-        background_color: `#00ef8c`,
-        theme_color: `#00ef8c`,
+        background_color: `#6648B1`,
+        theme_color: `#6648B1`,
         display: `minimal-ui`,
         icon: `src/images/favicon-32x32.png`,
       },

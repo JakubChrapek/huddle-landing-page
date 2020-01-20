@@ -22,7 +22,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Huddle Landing Page`,
 }
 
 export default Header

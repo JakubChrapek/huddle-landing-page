@@ -74,7 +74,17 @@ function SEO({ description, lang, meta, title }) {
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
+  meta: [
+    "huddle",
+    "community",
+    "connect",
+    "engage",
+    "discussion",
+    "genuine",
+    "involve",
+    "influence",
+    "conversation",
+  ],
   description: ``,
 }
 
