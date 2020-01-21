@@ -1,16 +1,10 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "../Header/Header"
 import styled, { createGlobalStyle } from "styled-components"
 import { colors } from "../../utils/colors"
+import Footer from "../Footer/Footer"
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,700&display=swap');
@@ -23,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     max-height: 100vh;
     overflow: hidden;
+    font-size: 18px;
   }
   *, *::before, *::after {
     box-sizing: border-box;
@@ -30,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   #___gatsby {
     margin-top: 0;
   }
-  h1,h2,h3,h4,h5,h6 {
+  h1,h2,h3,h4,h5,h6, button {
     font-family: 'Poppins', sans-serif;
   }
 `
@@ -57,11 +52,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </div>
     </StyledWrapper>
   )
