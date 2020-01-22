@@ -27,24 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-b503f060fbd5e5811e83.js"
+    "url": "webpack-runtime-b0db3ef64d118c9cc0de.js"
   },
   {
-    "url": "commons-22f10b033bef6753ef48.js"
+    "url": "commons-393bb71386a5c2b94482.js"
   },
   {
-    "url": "app-ab93dd6e040035674f2a.js"
+    "url": "app-a85b5191cb10061f37be.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-328a2b7c20aa4ad52a6f.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ed8e19a1f45f78a9e01c3d1dc4cfdb5f"
-  },
-  {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "d274adf0f008ef152ce70a312b04b730"
+    "revision": "cb06f46c2100ce5d894a8706b25361db"
   },
   {
     "url": "manifest.webmanifest",
@@ -136,12 +132,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/huddle-landing-page`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/huddle-landing-page/app-ab93dd6e040035674f2a.js`))) {
+  if (!resources || !(await caches.match(`/app-a85b5191cb10061f37be.js`))) {
     return await fetch(event.request)
   }
 
@@ -154,7 +150,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/huddle-landing-page/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })

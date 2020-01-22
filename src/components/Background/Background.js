@@ -1,8 +1,8 @@
 import React from "react"
-import { useMediaQuery } from "react-responsive"
+import Media from "react-media"
+
 import DesktopBg from "../../images/bg-desktop.svg"
 import MobileBg from "../../images/bg-mobile.svg"
-
 import styled from "styled-components"
 
 const StyledDesktopBg = styled.div`
@@ -32,24 +32,11 @@ const StyledMobileBg = styled.div`
 `
 
 const Background = () => {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 768px)",
-  })
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1024px)" })
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" })
-
   return (
     <div>
-      {isDesktopOrLaptop && (
-        <>
-          <StyledDesktopBg />
-        </>
-      )}
-      {isMobile && (
-        <>
-          <StyledMobileBg />
-        </>
-      )}
+      <Media query={{ maxWidth: 767 }}>
+        {matches => (matches ? <StyledMobileBg /> : <StyledDesktopBg />)}
+      </Media>
     </div>
   )
 }
