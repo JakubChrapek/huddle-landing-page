@@ -14,14 +14,31 @@ const StyledWrapper = styled.div`
   height: calc(75vh - 9rem);
   max-width: ${sizes.maxWidth};
   margin: 7rem auto 2rem;
+
+  @media (max-width: 1040px) {
+    height: calc(75vh - 5rem);
+    margin: 4rem auto 1rem;
+  }
+
+  @media (max-width: 870px) {
+    height: calc(75vh - 3rem);
+    margin: 2.5rem auto 0.5rem;
+  }
+
   @media (max-width: 767px) {
     width: 80%;
+    height: unset;
+    flex-direction: column;
+    margin: 3rem auto 1.5rem;
   }
 `
 
 const StyledImg = styled.img`
   width: 52.5%;
   z-index: 2;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `
 
 const TwoColSection = ({ img }) => (

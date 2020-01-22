@@ -11,13 +11,25 @@ const StyledButton = styled.button`
   color: ${colors.primary};
   font-size: 1rem;
   padding: 0.9rem 1.5rem;
-  box-shadow: 6px 6px 12px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
   border: 1px solid ${colors.primary};
   transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
   cursor: pointer;
 
+  @media (max-width: 1040px) {
+    font-size: 0.85rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 0.75rem;
+    max-width: 15rem;
+    padding: 0.75rem 4.4rem;
+    margin-top: 0.5rem;
+  }
+
   :hover {
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.65);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3);
     color: ${colors.primaryHover};
   }
 `

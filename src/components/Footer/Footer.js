@@ -9,6 +9,13 @@ const FooterWrapper = styled.div`
   height: 10vh;
   max-width: 1240px;
   margin: 0 auto;
+  width: 90%;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+    height: unset;
+    margin: 0 auto 2.5rem;
+  }
 `
 
 const StyledIconList = styled.ul`
@@ -17,6 +24,11 @@ const StyledIconList = styled.ul`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  @media (max-width: 767px) {
+    margin: 0;
+    padding: 0;
+  }
 `
 
 const StyledIcon = styled.li`
@@ -41,6 +53,18 @@ const StyledIcon = styled.li`
     vertical-align: middle;
     width: 0.9rem;
     height: 0.9rem;
+  }
+
+  @media (max-width: 767px) {
+    width: 1.65rem;
+    height: 1.65rem;
+    padding: 0.2rem;
+    margin-right: 0.6rem;
+
+    svg {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
   }
 `
 const Footer = () => (

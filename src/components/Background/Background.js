@@ -14,7 +14,7 @@ const StyledDesktopBg = styled.div`
   height: 100vh;
   background-image: url(${DesktopBg});
   background-position: 10% center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 `
 
@@ -24,7 +24,7 @@ const StyledMobileBg = styled.div`
   top: 0;
   z-index: 0;
   width: 100vw;
-  height: 50vh;
+  height: 65vh;
   background-image: url(${MobileBg});
   background-position: center center;
   background-size: cover;

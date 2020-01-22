@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
     max-height: 100vh;
     overflow: hidden;
     font-size: 18px;
+    @media (max-width: 767px) {
+    max-height: unset;
+    overflow: unset;
+  }
   }
   *, *::before, *::after {
     box-sizing: border-box;
@@ -33,6 +37,9 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${colors.primary};
+  @media (max-width: 767px) {
+    height: unset;
+  }
 `
 
 const Layout = ({ children }) => {
