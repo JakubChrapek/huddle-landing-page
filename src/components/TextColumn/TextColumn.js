@@ -4,7 +4,6 @@ import styled from "styled-components"
 const StyledColumn = styled.div`
   width: 42.5%;
   align-self: flex-start;
-  margin-top: 5rem;
   h2 {
     text-transform: capitalize;
     font-size: 2.1rem;

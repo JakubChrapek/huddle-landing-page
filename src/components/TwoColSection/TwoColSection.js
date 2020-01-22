@@ -11,13 +11,17 @@ const StyledWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  height: 80vh;
+  height: calc(75vh - 9rem);
   max-width: ${sizes.maxWidth};
-  margin: 0 auto;
+  margin: 7rem auto 2rem;
+  @media (max-width: 767px) {
+    width: 80%;
+  }
 `
 
 const StyledImg = styled.img`
   width: 52.5%;
+  z-index: 2;
 `
 
 const TwoColSection = ({ img }) => (

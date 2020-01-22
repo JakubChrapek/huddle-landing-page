@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/Seo"
 import TwoColSection from "../components/TwoColSection/TwoColSection"
