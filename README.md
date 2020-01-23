@@ -7,3 +7,8 @@
 5. Configure styled-components, scss etc.
 6. Have fun creating components - start with semantic HTML and CSS
 7. Check RWD and add some animations with GSAP.
+
+## DONE 🚀 
+Live website on 
+[Netlify](https://huddle-netlify.netlify.com/)
+[Zeit NOW](https://huddle-landing-page.now.sh)
