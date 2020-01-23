@@ -41,6 +41,10 @@ const StyledIcon = styled.li`
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, border-color .2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   :last-child {
     margin-right: 0;
@@ -48,6 +52,11 @@ const StyledIcon = styled.li`
 
   :hover {
     border: 1px solid #00ef8b;
+  }
+
+  a {
+    vertical-align: middle;
+    display: inherit;
   }
 
   :hover svg {
