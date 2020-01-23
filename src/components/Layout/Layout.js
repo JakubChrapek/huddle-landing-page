@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "../Header/Header"
@@ -6,6 +6,7 @@ import styled, { createGlobalStyle } from "styled-components"
 import { colors } from "../../utils/colors"
 import Footer from "../Footer/Footer"
 import Background from "../Background/Background"
+import { TweenMax, TimelineLite, Power3 } from "gsap"
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,700&display=swap');
@@ -32,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const StyledWrapper = styled.div`
+  visibility: hidden;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -53,12 +55,34 @@ const Layout = ({ children }) => {
     }
   `)
 
+  let landing = useRef(null)
+  let main = useRef(null)
+  let tl = new TimelineLite()
+
+  useEffect(() => {
+    let hero = main.children[0].firstElementChild
+    let footer = main.children[1]
+    let footerIcons = footer.children[0].children
+    let heroImage = hero.children[0]
+    let heroText = hero.children[1]
+
+    TweenMax.set([heroImage, heroText], { css: { visibility: "hidden" } })
+    TweenMax.to(landing, 0, { css: { visibility: "visible" } })
+    tl.from(main, 1.2, { opacity: 0, ease: Power3.easeOut }, -0.6)
+      .to([heroImage, heroText], 0, {
+        css: { visibility: "visible" },
+      })
+      .from(heroImage, 0.8, { opacity: 0, x: -50 })
+      .staggerFrom(heroText.children, 0.8, { opacity: 0, x: 50 }, 0.2, 1.8)
+      .staggerFrom(footerIcons, 0.2, { opacity: 0, y: 70 }, 0.2, 2.6)
+  })
+
   return (
-    <StyledWrapper>
+    <StyledWrapper ref={el => (landing = el)}>
       <GlobalStyle />
       <Background />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
+      <div ref={el => (main = el)}>
         <main>{children}</main>
         <Footer />
       </div>
