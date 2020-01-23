@@ -6,7 +6,7 @@ import styled, { createGlobalStyle } from "styled-components"
 import { colors } from "../../utils/colors"
 import Footer from "../Footer/Footer"
 import Background from "../Background/Background"
-import { TweenMax, TimelineLite, Power3 } from "gsap"
+import { gsap, TweenMax, TimelineLite, Power3 } from "gsap/dist/gsap"
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,700&display=swap');
