@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"
+import { FaFacebookF, FaSmileWink, FaInstagram } from "react-icons/fa"
+import colors from "../../utils/colors"
 
 const FooterWrapper = styled.div`
   display: flex;
@@ -40,19 +40,27 @@ const StyledIcon = styled.li`
   height: 2rem;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, border-color .2s ease-in-out;
 
   :last-child {
     margin-right: 0;
   }
 
   :hover {
-    transform: scale(1.03);
+    border: 1px solid #00ef8b;
   }
+
+  :hover svg {
+    fill: #00ef8b; 
+    transform: scale(1.2);
+  }
+
   svg {
     vertical-align: middle;
     width: 0.9rem;
     height: 0.9rem;
+    fill: white;
+    transition: fill 0.2s ease-in-out, transform .2s ease-in-out;
   }
 
   @media (max-width: 767px) {
@@ -71,13 +79,13 @@ const Footer = () => (
   <FooterWrapper>
     <StyledIconList>
       <StyledIcon>
-        <FaFacebookF />
+        <a href="https://www.facebook.com/kryptonum"><FaFacebookF /></a>
       </StyledIcon>
       <StyledIcon>
-        <FaTwitter />
+        <a href="https://kryptonumstudio.com/en/kryptonum-studio/"><FaSmileWink /></a>
       </StyledIcon>
       <StyledIcon>
-        <FaInstagram />
+        <a href="https://instagram.com/kryptonum.studio"><FaInstagram /></a>
       </StyledIcon>
     </StyledIconList>
   </FooterWrapper>
